@@ -1,0 +1,21 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.right-panel {
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.dashboard-content {
+    padding: 16px;
+}
+
+.bot-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}

@@ -1,0 +1,35 @@
+.create-bot-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid green;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.create-bot-form-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.create-bot-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+    padding-left: 20%;
+    margin-top: 10px;
+}

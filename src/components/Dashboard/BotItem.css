@@ -1,0 +1,88 @@
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bot-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.bot-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.bot-token,
+.bot-id {
+    margin: 0;
+}
+
+.bot-actions {
+    display: flex;
+    align-items: center;
+}
+
+.bot-delete {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.bot-delete:hover {
+    background-color: #c62828;
+}
+
+@media screen and (max-width: 768px) {
+    .bot-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bot-actions {
+        margin-top: 20px;
+    }
+
+    .bot-delete {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
