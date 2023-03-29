@@ -28,8 +28,7 @@
 
 .create-bot-wrapper {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 20%;
-    padding-left: 20%;
-    margin-top: 10px;
+    justify-content: center;
+    top: 50px
+
 }

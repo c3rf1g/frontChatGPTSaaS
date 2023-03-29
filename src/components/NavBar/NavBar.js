@@ -22,16 +22,13 @@ const NAvbar = () => {
                         }
                     >
                         <li>
-                            <a href='##'>Product</a>
+                            <a href='/dashboard'>Dashboard</a>
                         </li>
                         <li>
-                            <a href='##'>About Us</a>
+                            <a href='/about'>About Us</a>
                         </li>
                         <li>
-                            <a href='##'>Customers</a>
-                        </li>
-                        <li>
-                            <a href='##'>Price</a>
+                            <a href='/price'>Price</a>
                         </li>
                         <li>
                             <a href='##'>Contacts</a>

@@ -24,7 +24,7 @@ function QARowField({ index, question, answer, onQuestionChange, onAnswerChange,
 }
 
 function QAForm({ initialQAList, botId, onClose, setBotResponseList }) {
-    const [qaList, setQAList] = useState(initialQAList);
+    const [qaList, setQAList] = useState(initialQAList || []);
 
     const handleQuestionChange = (index, question) => {
         const updatedList = [...qaList];

@@ -33,7 +33,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -74,6 +73,9 @@
     .bot-item {
         flex-direction: column;
         align-items: flex-start;
+        padding-right: 35%;
+        width: calc(70% - 60px);
+
     }
 
     .bot-actions {

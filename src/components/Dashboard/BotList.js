@@ -71,13 +71,14 @@ const BotList = () => {
         }
         setIsLoading(false);
     };
-
+    const font = {
+        fontFamily: "Montserrat, bold"
+    }
     return (
-        <div>
+        <div className="bot-list" style={font}>
+
             <h3>Available Bots</h3>
-            <div className="create-bot-wrapper">
-                <button className="create-bot-btn" onClick={() => setIsModalOpen(true)}>Create Bot</button>
-            </div>
+
             {isLoading ? (
                 <p>Loading...</p>
             ) : botList.length ? (
@@ -89,7 +90,9 @@ const BotList = () => {
             ) : (
                 <p>No bots available for this user.</p>
             )}
-
+            <div className="create-bot-wrapper">
+                <button className="create-bot-btn" onClick={() => setIsModalOpen(true)}>Create Bot</button>
+            </div>
             {isModalOpen && (
                 <div className="modal" onClick={() => setIsModalOpen(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
