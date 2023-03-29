@@ -1,24 +1,49 @@
 import React, { useState } from 'react';
-import './NavBar.css';
-import NavBarInner from './NavBarInner.js';
+import style from './NavBar.module.css';
 
-const NavBar = ({ isLoggedIn, handleLogout }) => {
-    const [showLeftPanel, setShowLeftPanel] = useState(false);
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
-    const handleHamburgerClick = () => {
-        setShowLeftPanel(!showLeftPanel);
-    };
-
+const NAvbar = () => {
+    const font = {
+        fontFamily: "Montserrat, bold"
+    }
+    const [nav, setNav] = useState(false);
     return (
-        <nav className="navbar">
-            <div className="mobile-menu">
-                <button className="hamburger-button" onClick={handleHamburgerClick}>
-                    <i className="fa fa-bars"></i>
-                </button>
+        <header style={font} className={style.header}>
+            <div className='container'>
+                <div className={style.box}>
+                    <div className={style.logo_image}>
+                        <h2 >MyBotGPT</h2>
+                        {/*<img src="https://avatars.mds.yandex.net/i?id=16943fcfcce16aced693961690bf97a96f953f11-7551053-images-thumbs&n=13" alt='/' />*/}
+                    </div>
+                    <ul
+                        className={
+                            nav ? [style.menu, style.active].join(' ') : [style.menu]
+                        }
+                    >
+                        <li>
+                            <a href='##'>Product</a>
+                        </li>
+                        <li>
+                            <a href='##'>About Us</a>
+                        </li>
+                        <li>
+                            <a href='##'>Customers</a>
+                        </li>
+                        <li>
+                            <a href='##'>Price</a>
+                        </li>
+                        <li>
+                            <a href='##'>Contacts</a>
+                        </li>
+                    </ul>
+                    <div onClick={() => setNav(!nav)} className={style.mobile_btn}>
+                        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+                    </div>
+                </div>
             </div>
-            {showLeftPanel && <NavBarInner isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
-        </nav>
+        </header>
     );
 };
 
-export default NavBar;
+export default NAvbar;

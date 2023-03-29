@@ -60,38 +60,45 @@ const LoginForm = ({ setIsLoggedIn }) => {
     const toggleForm = () => {
         setIsRegistering((prevIsRegistering) => !prevIsRegistering);
     };
-
+    const font = {
+        fontFamily: "Montserrat, bold"
+    }
     return (
-        <div className="login-form white-component">
-            <h2>{isRegistering ? 'Register' : 'Login'}</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(event) => setEmail(event.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
-            </form>
-            <a href="#" onClick={toggleForm}>
-                {isRegistering
-                    ? 'Already have an account? Login'
-                    : 'Need to register? Sign up'}
-            </a>
+        <div className="login-wrapper" style={font}>
+            <div className="greenyellow-component"/>
+
+            <div className="login-form static-component">
+                <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
+                </form>
+                <a href="#" onClick={toggleForm}>
+                    {isRegistering
+                        ? 'Already have an account? Login'
+                        : 'Need to register? Sign up'}
+                </a>
+            </div>
+
         </div>
     );
 };

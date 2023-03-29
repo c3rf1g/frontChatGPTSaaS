@@ -25,9 +25,9 @@ const Dashboard = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
         <div className="dashboard-container">
             <NavBar isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
-            <div className="right-panel">
-                <BotList className="bot-list" />
-            </div>
+            {/*<div className="right-panel">*/}
+            {/*    <BotList className="bot-list" />*/}
+            {/*</div>*/}
         </div>
     );
 };
