@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
-import LoginForm from './LoginForm';
-import BotList from './Dashboard/BotList';
-import NavBar from "./NavBar/NavBar.js";
-import "./Dashboard/Dashboard.css";
+import LoginForm from '../Login/LoginForm.js';
+import BotList from './BotComponents/BotList.js';
+import NavBar from "../NavBar/NavBar.js";
+import "./Dashboard.css";
 const Dashboard = ({ isLoggedIn, setIsLoggedIn }) => {
     const history = useHistory();
 

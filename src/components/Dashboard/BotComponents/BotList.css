@@ -1,11 +1,16 @@
 .create-bot-btn {
-    background-color: green;
+    background-color: #660BAB;
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.create-bot-btn:hover {
+    background-color: #660BAB;
+    transition-duration: 0.5s;
 }
 
 .form-input {
@@ -17,7 +22,8 @@
 }
 
 .create-bot-form-btn {
-    background-color: green;
+    display: inline-block;
+    background-color: #660BAB;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -27,8 +33,7 @@
 }
 
 .create-bot-wrapper {
-    display: flex;
-    justify-content: center;
-    top: 50px
+    display: inline-block;
+    top: 150px
 
 }

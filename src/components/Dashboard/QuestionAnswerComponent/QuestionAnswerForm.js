@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {API_DOMAIN} from "../index.js";
-
+import {API_DOMAIN} from "../../../index.js";
+import "./QA.css"
 function QARowField({ index, question, answer, onQuestionChange, onAnswerChange, onDelete }) {
     const handleQuestionChange = (event) => {
         onQuestionChange(index, event.target.value);
@@ -16,10 +16,11 @@ function QARowField({ index, question, answer, onQuestionChange, onAnswerChange,
 
     return (
         <div className="qa-row">
-            <input type="text" value={question} onChange={handleQuestionChange} placeholder="Enter question" />
-            <input type="text" value={answer} onChange={handleAnswerChange} placeholder="Enter answer" />
-            <button onClick={handleDelete}>Delete</button>
+            <input type="text" className="qa-input" value={question} onChange={handleQuestionChange} placeholder="Enter question" />
+            <input type="text" className="qa-input" value={answer} onChange={handleAnswerChange} placeholder="Enter answer" />
+            <button className="qa-delete-btn" onClick={handleDelete}>Х</button>
         </div>
+
     );
 }
 
@@ -75,24 +76,31 @@ function QAForm({ initialQAList, botId, onClose, setBotResponseList }) {
         onClose(true)
         console.log(newBot)
     }
-
+    const font = {
+        fontFamily: "Montserrat, bold"
+    }
     return (
-        <div>
-            {qaList.map((qa, index) => (
-                <QARowField
-                    key={index}
-                    index={index}
-                    question={qa.question}
-                    answer={qa.answer}
-                    onQuestionChange={handleQuestionChange}
-                    onAnswerChange={handleAnswerChange}
-                    onDelete={handleDeleteRow}
-                />
-            ))}
-            <button onClick={handleAddRow}>Add Row</button>
-            <button onClick={handleSaveQAs}>Save</button>
+        <div style={font}>
+            <div className="qa-container">
+                {qaList.map((qa, index) => (
+                    <QARowField
+                        key={index}
+                        index={index}
+                        question={qa.question}
+                        answer={qa.answer}
+                        onQuestionChange={handleQuestionChange}
+                        onAnswerChange={handleAnswerChange}
+                        onDelete={handleDeleteRow}
+                    />
+                ))}
+                <button className="add-row-button" onClick={handleAddRow}>Add Row</button>
 
+            </div>
+
+            <button className="save-button" onClick={handleSaveQAs}>Save</button>
         </div>
+
+
     );
 }
 

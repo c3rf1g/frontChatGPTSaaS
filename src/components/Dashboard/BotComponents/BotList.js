@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {API_DOMAIN} from "../../index.js";
+import {API_DOMAIN} from "../../../index.js";
 import BotItem from "./BotItem.js";
-import "../BotList.css"
+import "./BotList.css"
+import Loader from "../../../utils/Loader.js";
 const BotList = () => {
     const [botList, setBotList] = useState([]);
     const accessToken = localStorage.getItem('accessToken');
@@ -76,9 +77,13 @@ const BotList = () => {
     }
     return (
         <div className="bot-list" style={font}>
-
-            <h3>Available Bots</h3>
-
+            {isLoading ? <Loader/> : null}
+            <h3 style={{display: "flex", alignItems: "center"}}>
+                <span style={{flex: "1 1 0"}}>Available Bots</span>
+                <div className="create-bot-wrapper" style={{marginLeft: "auto"}}>
+                    <button className="create-bot-btn" onClick={() => setIsModalOpen(true)}>Create Bot</button>
+                </div>
+            </h3>
             {isLoading ? (
                 <p>Loading...</p>
             ) : botList.length ? (
@@ -90,9 +95,7 @@ const BotList = () => {
             ) : (
                 <p>No bots available for this user.</p>
             )}
-            <div className="create-bot-wrapper">
-                <button className="create-bot-btn" onClick={() => setIsModalOpen(true)}>Create Bot</button>
-            </div>
+
             {isModalOpen && (
                 <div className="modal" onClick={() => setIsModalOpen(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>

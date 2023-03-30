@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
-import LoginForm from './components/LoginForm';
-import Dashboard from './components/Dashboard';
+import LoginForm from './components/Login/LoginForm.js';
+import Dashboard from './components/Dashboard/Dashboard.js';
 import "typeface-montserrat"
 function App() {
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {API_DOMAIN} from "../../index.js";
-import BotSettingsModal from "../BotSettingsModal.js";
+import {API_DOMAIN} from "../../../index.js";
+import BotSettingsModal from "./BotSettingsModal.js";
 import "./BotItem.css"
 const BotItem = ({ bot, onDelete }) => {
     const [showSettings, setShowSettings] = useState(false);

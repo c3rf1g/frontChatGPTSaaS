@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import {useHistory} from "react-router-dom";
-import {API_DOMAIN} from "../index.js";
-import "./Login/Login.css"
+import {API_DOMAIN} from "../../index.js";
+import "./Login.css"
+import CircularLoader from "../../utils/Loader.js";
 const LoginForm = ({ setIsLoggedIn }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isRegistering, setIsRegistering] = useState(false);
     const history = useHistory();
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true)
         if (isRegistering) {
             const response = await fetch(API_DOMAIN + '/registration', {
                 method: 'POST',
@@ -55,6 +58,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                 alert(data.error)
             }
         }
+        setLoading(false)
     };
 
     const toggleForm = () => {
@@ -65,12 +69,15 @@ const LoginForm = ({ setIsLoggedIn }) => {
     }
     return (
         <div className="login-wrapper" style={font}>
-            <div className="greenyellow-component"/>
+            {loading ? <CircularLoader /> : null}
+            <div className="greenyellow-component">
+                <h1 className="rainbow-text">MyBotGPT</h1>
+            </div>
 
             <div className="login-form static-component">
-                <h2>{isRegistering ? 'Register' : 'Login'}</h2>
+                <h2 >{isRegistering ? 'Register' : 'Login'}</h2>
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div style={{ textAlign: "left" }}>
                         <label htmlFor="email">Email:</label>
                         <input
                             type="email"
@@ -80,7 +87,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div style={{ textAlign: "left" }}>
                         <label htmlFor="password">Password:</label>
                         <input
                             type="password"
@@ -92,7 +99,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                     </div>
                     <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
                 </form>
-                <a href="#" onClick={toggleForm}>
+                <a href="#" style={{textDecoration: "none"}} onClick={toggleForm}>
                     {isRegistering
                         ? 'Already have an account? Login'
                         : 'Need to register? Sign up'}
